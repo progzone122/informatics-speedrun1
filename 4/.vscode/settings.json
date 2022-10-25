@@ -1,6 +1,0 @@
-{
-    "nuxt.isNuxtApp": false,
-    "files.associations": {
-        "iostream": "cpp"
-    }
-}
