@@ -5,13 +5,6 @@
 #include <vector>
 
 using namespace std;
-//Функція виведення масиву на екран
-// void print_array(int *a, int *ARRAY_SIZE){
-//     cout << "Результат: \n";
-//     for (int i = 0; i < *ARRAY_SIZE; i++){
-//         cout << a[i] << "\n";
-//     }
-// }
 //Бульбашкове сортування
 void bubble_sort(int *a, int *ARRAY_SIZE){
     int j;
