@@ -64,23 +64,23 @@ void menu(int *menu_var, int *a, int *ARRAY_SIZE){
         << ">> ";
     cin >> *menu_var;
     switch (*menu_var){
-    case 1:
-        cout << "Результат: " << funcA(a, ARRAY_SIZE);
-        cout << endl;
-        menu(menu_var, a, ARRAY_SIZE);
-        break;
-    case 2:
-        funcB(a, ARRAY_SIZE);
-        cout << endl;
-        menu(menu_var, a, ARRAY_SIZE);
-        break;
-    case 3:
-        exit(0); //Програма завершена успішно
-        break;
-    default:
-        cout << "\n[!] Невірне число!\n\n";
-        menu(menu_var, a, ARRAY_SIZE);
-        break;
+        case 1:
+            cout << "Результат: " << funcA(a, ARRAY_SIZE);
+            cout << endl;
+            menu(menu_var, a, ARRAY_SIZE);
+            break;
+        case 2:
+            funcB(a, ARRAY_SIZE);
+            cout << endl;
+            menu(menu_var, a, ARRAY_SIZE);
+            break;
+        case 3:
+            exit(0); //Програма завершена успішно
+            break;
+        default:
+            cout << "\n[!] Невірне число!\n\n";
+            menu(menu_var, a, ARRAY_SIZE);
+            break;
     }
 }
 //Функція для ведень значень в масив a
