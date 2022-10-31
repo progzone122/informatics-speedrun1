@@ -1,0 +1,6 @@
+name=Antipov Kostyantin
+group=CS-21-1
+gradesExam=55
+gradesTest=555
+socWork=0
+studBase=0

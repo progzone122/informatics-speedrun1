@@ -1,0 +1,6 @@
+name=May Oleksiy
+group=CS-21-1
+gradesExam=34
+gradesTest=444
+socWork=0
+studBase=0

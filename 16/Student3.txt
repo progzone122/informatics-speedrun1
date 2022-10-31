@@ -1,0 +1,6 @@
+name=Not Anyone
+group=CS-12-1
+gradesExam=33
+gradesTest=333
+socWork=1
+studBase=1

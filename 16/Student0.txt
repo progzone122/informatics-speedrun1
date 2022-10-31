@@ -1,0 +1,6 @@
+name=Kolosov Igor
+group=CS-21-1
+gradesExam=44
+gradesTest=444
+socWork=0
+studBase=0
