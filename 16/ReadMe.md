@@ -13,7 +13,7 @@
 ***
 
 # Документація
-<
+```c++
         class Read
             public: 
                 vector <string> fileReadAll(string filename)
@@ -44,4 +44,4 @@
                     - if vector is empty outputs "Студентів немає, спробуйте додати"
                 void enterStudentData(int studentNo)
                     - takes all student data from input kbd and writes it to file 
->
+```
