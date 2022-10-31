@@ -41,7 +41,7 @@ void find_file(string *FILE_NAME, string word){
                     break;
                 }
             }
-            cout << line_index << " строка: " << count << " совпадений" << endl;
+            cout << line_index << " рядок: " << count << " збігів" << endl;
     }
     if (!fin) {
         cout << "Помилка відкриття файлу." << endl;
@@ -60,12 +60,12 @@ int main(){
 
     int FILE_SIZE = 6; //Кількість рядків в файлі
     string FILE_NAME; //назва файлу
-
+    string word;
+    
     cout << "Введіть назву нового файлу: ";
     cin >> FILE_NAME;
     cout << "Введіть кількість рядків у новому файлі: ";
     cin >> FILE_SIZE;
-    string word;
 
     new_file(&FILE_NAME, &FILE_SIZE);
     cout << "Введіть слово для пошуку: ";
