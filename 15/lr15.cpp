@@ -43,9 +43,6 @@ void find_file(string *FILE_NAME, string word){
             }
             cout << line_index << " рядок: " << count << " збігів" << endl;
     }
-    if (!fin) {
-        cout << "Помилка відкриття файлу." << endl;
-    }
         mp.value_comp();
         cout << "-----------------------------------" << endl;
         cout << "Найбільше шуканих слів в рядку: " << (*(mp.rend())).first - 1 << endl;
