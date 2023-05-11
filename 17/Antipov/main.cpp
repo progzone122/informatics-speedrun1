@@ -4,55 +4,68 @@
 using namespace std;
 
 int main() {
-    SetConsoleCP(65001); // устанавливаем кодировку ввода в консоли для работы с кириллицей
-    SetConsoleOutputCP(65001); // устанавливаем кодировку вывода в консоли для работы с кириллицей
+SetConsoleCP(65001);
+SetConsoleOutputCP(65001);
 
-    int rows, cols;
-    cout << "Введите количество строк и столбцов: ";
-    cin >> rows >> cols;
+int rows, cols;
+cout << "Введіть кількість рядків та стовпців: " << endl;
+cin >> rows >> cols;
 
-    int array[rows][cols];
-    cout << "Введите матрицу:" << endl;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cout << "Введите [" << i << "," << j << "] элемент: ";
-            cin >> array[i][j];
-        }
-    }
+// виділяємо пам'ять для двовимірного динамічного масиву
+int **array = new int *[rows];
+for (int i = 0; i < rows; i++) {
+array[i] = new int[cols];
+}
 
-    cout << "Матрица:" << endl;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cout << array[i][j] << " ";
-        }
-        cout << endl;
-    }
+cout << "Введіть матрицю:" << endl;
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+cout << "Введіть [" << i << "," << j << "] елемент: ";
+cin >> array[i][j];
+}
+}
 
-    // проходим по каждому столбцу матрицы
-    for (int j = 0; j < cols; j++) {
-        int max_elem = array[0][j]; // инициализируем максимальный элемент значением первого элемента в столбце
-        double sum = 0; // инициализируем сумму отрицательных элементов
-        int count = 0; // инициализируем количество отрицательных элементов
+cout << "Матриця:" << endl;
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j < cols; j++) {
+cout << array[i][j] << " ";
+}
+cout << endl;
+}
 
-        // проходим по каждому элементу в столбце
-        for (int i = 0; i < rows; i++) {
-            if (array[i][j] < 0) { // если элемент отрицательный
-                sum += array[i][j]; // добавляем его к сумме
-                count++; // увеличиваем счетчик отрицательных элементов
-            }
-            if (array[i][j] > max_elem) { // если элемент больше текущего максимального
-                max_elem = array[i][j]; // обновляем максимальный элемент
-            }
-        }
+// проходимо по кожному стовпцю матриці
+for (int j = 0; j < cols; j++) {
+int max_elem = array[0][j];
+double sum = 0;
+int count = 0;
 
-        cout << "Максимальный элемент в столбце " << j << ": " << max_elem << endl; // выводим максимальный элемент
-        if (count == 0) { // если в столбце нет отрицательных элементов
-            cout << "В столбце " << j << " отрицательных элементов нет" << endl; // выводим соответствующее сообщение
-        } else {
-            double avg = sum / count; // вычисляем среднее арифметическое отрицательных элементов
-            cout << "Среднее арифметическое отрицательных элементов в столбце " << j << ": " << avg << endl; // выводим среднее арифметическое
-        }
-    }
+// проходимо по кожному елементу в стовпці
+for (int i = 0; i < rows; i++) {
+  if (array[i][j] < 0) {
+    sum += array[i][j];
+    count++;
+  }
+  if (array[i][j] > max_elem) {
+    max_elem = array[i][j];
+  }
+}
 
-    return 0;
+cout << "Максимальний елемент в стовпці " << j << ": " << max_elem << endl;
+if (count == 0) {
+  cout << "У стовпці " << j << " немає від'ємних елементів" << endl;
+} else {
+  double avg = sum / count;
+  cout << "Середнє арифметичне від'ємних елементів в стовпці " << j
+       << ": " << avg << endl;
+}
+
+}
+
+// звільняємо виділену пам'ять
+for (int i = 0; i < rows; i++) {
+delete[] array[i];
+}
+delete[] array;
+
+return 0;
 }
